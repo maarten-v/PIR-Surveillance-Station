@@ -18,6 +18,10 @@ $sid=$resArr[data];
 //Request API info:
 //http://diskstation:5000/webapi/query.cgi?api=SYNO.API.Info&method=Query&version=1&query=SYNO.SurveillanceStation.ExternalRecording
 
+//List camera's to find camera ID:
+//http://diskstation:5000/webapi/_______________________________________________________entry.cgi?api=SYNO.SurveillanceStation.Camera&method=List&version=1&offset=1&limit=30&sid=<sid>
+//look for: "id":
+
 //send Start record
 $url="http://diskstation:5000/webapi/_______________________________________________________entry.cgi?api=SYNO.SurveillanceStation.ExternalRecording&method=Record&version=2&cameraId=". $cameraid. "&_sid=".$sid[sid]."&action=";
 //echo 'url: '.$url.'<br />';
