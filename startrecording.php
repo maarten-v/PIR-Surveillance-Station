@@ -21,13 +21,10 @@ $sid=$resArr[data];
 //send Start record
 $url="http://diskstation:5000/webapi/_______________________________________________________entry.cgi?api=SYNO.SurveillanceStation.ExternalRecording&method=Record&version=2&cameraId=". $cameraid. "&_sid=".$sid[sid]."&action=";
 //echo 'url: '.$url.'<br />';
-echo 'response:<br />';
 $response = get_web_page($url.'start');
-echo $response.'<br />'; 
 sleep(10);
-echo 'response:<br />';
 $response = get_web_page($url.'stop');
-echo $response; 
+
 
 function get_web_page($url) {
       $options = array (CURLOPT_RETURNTRANSFER => true, // return web page
@@ -54,6 +51,7 @@ function get_web_page($url) {
     $header ['errno'] = $err;
     $header ['errmsg'] = $errmsg;
     $header ['content'] = $content;
+    echo 'response:<br />'.$content.'<br />';
     return $header ['content'];
 } 
 ?>
